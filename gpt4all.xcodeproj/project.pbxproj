@@ -23,7 +23,6 @@
 		059C9BA829F00E67006C672A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B9D29F00E67006C672A /* LICENSE */; };
 		059C9BAB29F00F9B006C672A /* UtilsWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 059C9BAA29F00F9B006C672A /* UtilsWrapper.mm */; };
 		059C9BB129F0167D006C672A /* ChatWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 059C9BB029F0167D006C672A /* ChatWrapper.mm */; };
-		059C9BB429F0211E006C672A /* schat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059C9BB229F0211E006C672A /* schat.cpp */; };
 		059C9BB829F076FA006C672A /* gpt4all-lora-quantized.bin in Resources */ = {isa = PBXBuildFile; fileRef = 059C9BB729F076FA006C672A /* gpt4all-lora-quantized.bin */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +49,6 @@
 		059C9BAA29F00F9B006C672A /* UtilsWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UtilsWrapper.mm; sourceTree = "<group>"; };
 		059C9BAF29F0167D006C672A /* ChatWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatWrapper.h; sourceTree = "<group>"; };
 		059C9BB029F0167D006C672A /* ChatWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChatWrapper.mm; sourceTree = "<group>"; };
-		059C9BB229F0211E006C672A /* schat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = schat.cpp; sourceTree = "<group>"; };
-		059C9BB329F0211E006C672A /* schat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = schat.hpp; sourceTree = "<group>"; };
 		059C9BB629F04ED4006C672A /* chat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chat.h; sourceTree = "<group>"; };
 		059C9BB729F076FA006C672A /* gpt4all-lora-quantized.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "gpt4all-lora-quantized.bin"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,8 +122,6 @@
 				059C9B9429F00E67006C672A /* utils.h */,
 				059C9B9B29F00E67006C672A /* utils.cpp */,
 				059C9B9029F00E66006C672A /* gpt4all-Bridging-Header.h */,
-				059C9BB329F0211E006C672A /* schat.hpp */,
-				059C9BB229F0211E006C672A /* schat.cpp */,
 			);
 			path = "gpt4all-cpp";
 			sourceTree = "<group>";
@@ -213,7 +208,6 @@
 				059C9BA529F00E67006C672A /* ggml.c in Sources */,
 				059C9BAB29F00F9B006C672A /* UtilsWrapper.mm in Sources */,
 				059C9B9F29F00E67006C672A /* Makefile in Sources */,
-				059C9BB429F0211E006C672A /* schat.cpp in Sources */,
 				059C9BA429F00E67006C672A /* chat.cpp in Sources */,
 				059C9BB129F0167D006C672A /* ChatWrapper.mm in Sources */,
 				059C9B4B29EEF571006C672A /* gpt4allApp.swift in Sources */,
@@ -355,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +382,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
