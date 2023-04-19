@@ -91,6 +91,7 @@ int32_t seed = -1; // RNG seed
     int input_consumed = 0;
     bool input_noecho = true;
     
+    NSMutableString *response = [NSMutableString stringWithString:@""];
     while (remaining_tokens > 0) {
         // predict
         if (embd.size() > 0) {
@@ -153,6 +154,8 @@ int32_t seed = -1; // RNG seed
             
             NSString *resultNS = [NSString stringWithUTF8String: result.c_str()];
             NSLog(@"result: %@", resultNS);
+            
+            [response appendString:resultNS];
         }
         
         
@@ -167,7 +170,11 @@ int32_t seed = -1; // RNG seed
         
     }
     
-    return @"implement me";
+    if (response.length == 0) {
+        return @"no response from the GPT model.";
+    }
+    
+    return response;
 }
 
 @end
