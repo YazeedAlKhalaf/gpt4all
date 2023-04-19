@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		059C9B4B29EEF571006C672A /* gpt4allApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B4A29EEF571006C672A /* gpt4allApp.swift */; };
+		059C9B4D29EEF571006C672A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B4C29EEF571006C672A /* ContentView.swift */; };
+		059C9B4F29EEF572006C672A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B4E29EEF572006C672A /* Assets.xcassets */; };
+		059C9B5229EEF572006C672A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B5129EEF572006C672A /* Preview Assets.xcassets */; };
+		059C9B9E29F00E67006C672A /* quantize.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B9129F00E67006C672A /* quantize.cpp */; };
+		059C9B9F29F00E67006C672A /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B9229F00E67006C672A /* Makefile */; };
+		059C9BA129F00E67006C672A /* convert-pth-to-ggml.py in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B9629F00E67006C672A /* convert-pth-to-ggml.py */; };
+		059C9BA229F00E67006C672A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B9729F00E67006C672A /* README.md */; };
+		059C9BA329F00E67006C672A /* quantize.sh in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B9829F00E67006C672A /* quantize.sh */; };
+		059C9BA429F00E67006C672A /* chat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B9929F00E67006C672A /* chat.cpp */; };
+		059C9BA529F00E67006C672A /* ggml.c in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B9A29F00E67006C672A /* ggml.c */; };
+		059C9BA629F00E67006C672A /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059C9B9B29F00E67006C672A /* utils.cpp */; };
+		059C9BA729F00E67006C672A /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B9C29F00E67006C672A /* CMakeLists.txt */; };
+		059C9BA829F00E67006C672A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 059C9B9D29F00E67006C672A /* LICENSE */; };
+		059C9BAB29F00F9B006C672A /* UtilsWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 059C9BAA29F00F9B006C672A /* UtilsWrapper.mm */; };
+		059C9BB129F0167D006C672A /* ChatWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 059C9BB029F0167D006C672A /* ChatWrapper.mm */; };
+		059C9BB429F0211E006C672A /* schat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059C9BB229F0211E006C672A /* schat.cpp */; };
+		059C9BB829F076FA006C672A /* gpt4all-lora-quantized.bin in Resources */ = {isa = PBXBuildFile; fileRef = 059C9BB729F076FA006C672A /* gpt4all-lora-quantized.bin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		059C9B4729EEF571006C672A /* gpt4all.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpt4all.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		059C9B4A29EEF571006C672A /* gpt4allApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpt4allApp.swift; sourceTree = "<group>"; };
+		059C9B4C29EEF571006C672A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		059C9B4E29EEF572006C672A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		059C9B5129EEF572006C672A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		059C9B9029F00E66006C672A /* gpt4all-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gpt4all-Bridging-Header.h"; sourceTree = "<group>"; };
+		059C9B9129F00E67006C672A /* quantize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quantize.cpp; sourceTree = "<group>"; };
+		059C9B9229F00E67006C672A /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		059C9B9429F00E67006C672A /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		059C9B9529F00E67006C672A /* ggml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ggml.h; sourceTree = "<group>"; };
+		059C9B9629F00E67006C672A /* convert-pth-to-ggml.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = "convert-pth-to-ggml.py"; sourceTree = "<group>"; };
+		059C9B9729F00E67006C672A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		059C9B9829F00E67006C672A /* quantize.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = quantize.sh; sourceTree = "<group>"; };
+		059C9B9929F00E67006C672A /* chat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = chat.cpp; sourceTree = "<group>"; };
+		059C9B9A29F00E67006C672A /* ggml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ggml.c; sourceTree = "<group>"; };
+		059C9B9B29F00E67006C672A /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		059C9B9C29F00E67006C672A /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		059C9B9D29F00E67006C672A /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		059C9BA929F00F9B006C672A /* UtilsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsWrapper.h; sourceTree = "<group>"; };
+		059C9BAA29F00F9B006C672A /* UtilsWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UtilsWrapper.mm; sourceTree = "<group>"; };
+		059C9BAF29F0167D006C672A /* ChatWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatWrapper.h; sourceTree = "<group>"; };
+		059C9BB029F0167D006C672A /* ChatWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChatWrapper.mm; sourceTree = "<group>"; };
+		059C9BB229F0211E006C672A /* schat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = schat.cpp; sourceTree = "<group>"; };
+		059C9BB329F0211E006C672A /* schat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = schat.hpp; sourceTree = "<group>"; };
+		059C9BB629F04ED4006C672A /* chat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chat.h; sourceTree = "<group>"; };
+		059C9BB729F076FA006C672A /* gpt4all-lora-quantized.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = "gpt4all-lora-quantized.bin"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		059C9B4429EEF571006C672A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		059C9B3E29EEF571006C672A = {
+			isa = PBXGroup;
+			children = (
+				059C9B4929EEF571006C672A /* gpt4all */,
+				059C9B4829EEF571006C672A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		059C9B4829EEF571006C672A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				059C9B4729EEF571006C672A /* gpt4all.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		059C9B4929EEF571006C672A /* gpt4all */ = {
+			isa = PBXGroup;
+			children = (
+				059C9BB729F076FA006C672A /* gpt4all-lora-quantized.bin */,
+				059C9B8C29F00B19006C672A /* gpt4all-cpp */,
+				059C9B4A29EEF571006C672A /* gpt4allApp.swift */,
+				059C9B4C29EEF571006C672A /* ContentView.swift */,
+				059C9B4E29EEF572006C672A /* Assets.xcassets */,
+				059C9B5029EEF572006C672A /* Preview Content */,
+				059C9BA929F00F9B006C672A /* UtilsWrapper.h */,
+				059C9BAA29F00F9B006C672A /* UtilsWrapper.mm */,
+				059C9BAF29F0167D006C672A /* ChatWrapper.h */,
+				059C9BB029F0167D006C672A /* ChatWrapper.mm */,
+			);
+			path = gpt4all;
+			sourceTree = "<group>";
+		};
+		059C9B5029EEF572006C672A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				059C9B5129EEF572006C672A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		059C9B8C29F00B19006C672A /* gpt4all-cpp */ = {
+			isa = PBXGroup;
+			children = (
+				059C9BB629F04ED4006C672A /* chat.h */,
+				059C9B9929F00E67006C672A /* chat.cpp */,
+				059C9B9C29F00E67006C672A /* CMakeLists.txt */,
+				059C9B9629F00E67006C672A /* convert-pth-to-ggml.py */,
+				059C9B9A29F00E67006C672A /* ggml.c */,
+				059C9B9529F00E67006C672A /* ggml.h */,
+				059C9B9D29F00E67006C672A /* LICENSE */,
+				059C9B9229F00E67006C672A /* Makefile */,
+				059C9B9129F00E67006C672A /* quantize.cpp */,
+				059C9B9829F00E67006C672A /* quantize.sh */,
+				059C9B9729F00E67006C672A /* README.md */,
+				059C9B9429F00E67006C672A /* utils.h */,
+				059C9B9B29F00E67006C672A /* utils.cpp */,
+				059C9B9029F00E66006C672A /* gpt4all-Bridging-Header.h */,
+				059C9BB329F0211E006C672A /* schat.hpp */,
+				059C9BB229F0211E006C672A /* schat.cpp */,
+			);
+			path = "gpt4all-cpp";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		059C9B4629EEF571006C672A /* gpt4all */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 059C9B5529EEF572006C672A /* Build configuration list for PBXNativeTarget "gpt4all" */;
+			buildPhases = (
+				059C9B4329EEF571006C672A /* Sources */,
+				059C9B4429EEF571006C672A /* Frameworks */,
+				059C9B4529EEF571006C672A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gpt4all;
+			productName = gpt4all;
+			productReference = 059C9B4729EEF571006C672A /* gpt4all.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		059C9B3F29EEF571006C672A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					059C9B4629EEF571006C672A = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+					};
+				};
+			};
+			buildConfigurationList = 059C9B4229EEF571006C672A /* Build configuration list for PBXProject "gpt4all" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 059C9B3E29EEF571006C672A;
+			productRefGroup = 059C9B4829EEF571006C672A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059C9B4629EEF571006C672A /* gpt4all */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		059C9B4529EEF571006C672A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059C9BA329F00E67006C672A /* quantize.sh in Resources */,
+				059C9BA829F00E67006C672A /* LICENSE in Resources */,
+				059C9B5229EEF572006C672A /* Preview Assets.xcassets in Resources */,
+				059C9BA229F00E67006C672A /* README.md in Resources */,
+				059C9BA729F00E67006C672A /* CMakeLists.txt in Resources */,
+				059C9B4F29EEF572006C672A /* Assets.xcassets in Resources */,
+				059C9BB829F076FA006C672A /* gpt4all-lora-quantized.bin in Resources */,
+				059C9BA129F00E67006C672A /* convert-pth-to-ggml.py in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		059C9B4329EEF571006C672A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059C9B9E29F00E67006C672A /* quantize.cpp in Sources */,
+				059C9B4D29EEF571006C672A /* ContentView.swift in Sources */,
+				059C9BA529F00E67006C672A /* ggml.c in Sources */,
+				059C9BAB29F00F9B006C672A /* UtilsWrapper.mm in Sources */,
+				059C9B9F29F00E67006C672A /* Makefile in Sources */,
+				059C9BB429F0211E006C672A /* schat.cpp in Sources */,
+				059C9BA429F00E67006C672A /* chat.cpp in Sources */,
+				059C9BB129F0167D006C672A /* ChatWrapper.mm in Sources */,
+				059C9B4B29EEF571006C672A /* gpt4allApp.swift in Sources */,
+				059C9BA629F00E67006C672A /* utils.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		059C9B5329EEF572006C672A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		059C9B5429EEF572006C672A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		059C9B5629EEF572006C672A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gpt4all/Preview Content\"";
+				DEVELOPMENT_TEAM = JL46C549NC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.awesomedev.gpt4all;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "gpt4all/gpt4all-cpp/gpt4all-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		059C9B5729EEF572006C672A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gpt4all/Preview Content\"";
+				DEVELOPMENT_TEAM = JL46C549NC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.awesomedev.gpt4all;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "gpt4all/gpt4all-cpp/gpt4all-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		059C9B4229EEF571006C672A /* Build configuration list for PBXProject "gpt4all" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059C9B5329EEF572006C672A /* Debug */,
+				059C9B5429EEF572006C672A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		059C9B5529EEF572006C672A /* Build configuration list for PBXNativeTarget "gpt4all" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059C9B5629EEF572006C672A /* Debug */,
+				059C9B5729EEF572006C672A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 059C9B3F29EEF571006C672A /* Project object */;
+}
