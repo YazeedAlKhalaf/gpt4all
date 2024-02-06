@@ -98,7 +98,7 @@ gpt_vocab::id llama_sample_top_p_top_k(
     std::mt19937 &rng);
 
 // filer to top K tokens from list of logits
-void sample_top_k(std::vector<std::pair<double, gpt_vocab::id>> &logits_id, int top_k);
+void sample_top_k(std::vector<std::pair<double, gpt_vocab::id> > &logits_id, int top_k);
 
 //
 // Quantization
@@ -106,3 +106,4 @@ void sample_top_k(std::vector<std::pair<double, gpt_vocab::id>> &logits_id, int 
 
 size_t ggml_quantize_q4_0(float *src, void *dst, int n, int k, int qk, int64_t *hist);
 size_t ggml_quantize_q4_1(float *src, void *dst, int n, int k, int qk, int64_t *hist);
+size_t ggml_quantize_q2(float *src, void *dst, int n, int k, int qk, int64_t *hist);

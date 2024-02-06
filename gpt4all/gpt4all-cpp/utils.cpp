@@ -569,3 +569,68 @@ size_t ggml_quantize_q4_1(float * src, void * dst, int n, int k, int qk, int64_t
 
     return (n/k)*row_size;
 }
+
+size_t ggml_quantize_q2(float * src, void * dst, int n, int k, int qk, int64_t * hist) {
+    const int nb = k / qk;
+    const size_t bs = (sizeof(float) + sizeof(uint8_t)*qk/4);
+    const size_t row_size = nb*bs;
+
+    assert(k % qk == 0);
+
+    const size_t pp_size = qk / 4;
+    uint8_t *pp = static_cast<uint8_t*>(alloca(pp_size));
+
+    char * pdst = (char *) dst;
+
+    for (int j = 0; j < n; j += k) {
+        uint8_t * pd = (uint8_t *) (pdst + (j/k)*row_size + 0*bs);
+        uint8_t * pb = (uint8_t *) (pdst + (j/k)*row_size + 0*bs + sizeof(float));
+
+        for (int i = 0; i < nb; i++) {
+            float amax = 0.0f; // absolute max
+
+            {
+                for (int l = 0; l < qk; l++) {
+                    const float v = src[j + i*qk + l];
+                    amax = std::max(amax, fabsf(v));
+                }
+
+                const float d = amax / ((1 << 1) - 1);
+                const float id = d ? 1.0f/d : 0.0f;
+
+                *(float *) pd = d;
+                pd += bs;
+
+                for (int l = 0; l < qk; l += 4) {
+                    const float v0 = (src[j + i*qk + l + 0])*id;
+                    const float v1 = (src[j + i*qk + l + 1])*id;
+                    const float v2 = (src[j + i*qk + l + 2])*id;
+                    const float v3 = (src[j + i*qk + l + 3])*id;
+
+                    const uint8_t vi0 = ((int8_t) (round(v0))) + 2;
+                    const uint8_t vi1 = ((int8_t) (round(v1))) + 2;
+                    const uint8_t vi2 = ((int8_t) (round(v2))) + 2;
+                    const uint8_t vi3 = ((int8_t) (round(v3))) + 2;
+
+                    assert(vi0 >= 0 && vi0 < 4);
+                    assert(vi1 >= 0 && vi1 < 4);
+                    assert(vi2 >= 0 && vi2 < 4);
+                    assert(vi3 >= 0 && vi3 < 4);
+
+                    hist[vi0]++;
+                    hist[vi1]++;
+                    hist[vi2]++;
+                    hist[vi3]++;
+
+                    pp[l/4] = vi0 | (vi1 << 2) | (vi2 << 4) | (vi3 << 6);
+                }
+
+                memcpy(pb, pp, pp_size);
+                pb += bs;
+            }
+        }
+    }
+
+    return (n/k)*row_size;
+}
+
