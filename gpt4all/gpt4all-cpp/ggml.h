@@ -200,7 +200,6 @@ struct ggml_context;
 enum ggml_type {
     GGML_TYPE_Q4_0,
     GGML_TYPE_Q4_1,
-    GGML_TYPE_Q2,
     GGML_TYPE_I8,
     GGML_TYPE_I16,
     GGML_TYPE_I32,

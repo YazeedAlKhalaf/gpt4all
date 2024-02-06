@@ -32,17 +32,16 @@ struct llama_hparams {
 bool llama_model_quantize(const std::string & fname_inp, const std::string & fname_out, int itype) {
     ggml_type type = GGML_TYPE_Q4_1;
 
-        switch (itype) {
-            case 2: type = GGML_TYPE_Q4_0; break;
-            case 3: type = GGML_TYPE_Q4_1; break;
-            case 4: type = GGML_TYPE_Q2; break; // Added support for 2-bit quantization
-            default: fprintf(stderr, "%s: invalid quantization type %d\n", __func__, itype); return 1;
-        };
+    switch (itype) {
+        case 2: type = GGML_TYPE_Q4_0; break;
+        case 3: type = GGML_TYPE_Q4_1; break;
+        default: fprintf(stderr, "%s: invalid quantization type %d\n", __func__, itype); return 1;
+    };
 
-        if (type != GGML_TYPE_Q4_0 && type != GGML_TYPE_Q4_1 && type != GGML_TYPE_Q2) {
-            fprintf(stderr, "%s: invalid quantization type %d\n", __func__, type);
-            return false;
-        }
+    if (type != GGML_TYPE_Q4_0 && type != GGML_TYPE_Q4_1) {
+        fprintf(stderr, "%s: invalid quantization type %d\n", __func__, type);
+        return false;
+    }
 
     gpt_vocab vocab;
 
@@ -170,11 +169,9 @@ bool llama_model_quantize(const std::string & fname_inp, const std::string & fna
             }
 
             // regexes of tensor names to be quantized
-            // const std::vector<std::string> k_names = {
-            //     ".*weight",
-            // };
-            std::vector<std::string> k_names;
-            k_names.push_back(".*weight");
+            const std::vector<std::string> k_names = {
+                ".*weight",
+            };
 
             bool quantize = false;
             for (const auto & s : k_names) {
@@ -229,18 +226,14 @@ bool llama_model_quantize(const std::string & fname_inp, const std::string & fna
                 std::vector<int64_t> hist_cur(1 << 4, 0);
 
                 switch (type) {
-                           case GGML_TYPE_Q4_0:
-                               {
-                                   cur_size = ggml_quantize_q4_0(data_f32.data(), work.data(), nelements, ne[0], QK, hist_cur.data());
-                               } break;
-                           case GGML_TYPE_Q4_1:
-                               {
-                                   cur_size = ggml_quantize_q4_1(data_f32.data(), work.data(), nelements, ne[0], QK, hist_cur.data());
-                               } break;
-                           case GGML_TYPE_Q2: // Added support for 2-bit quantization
-                               {
-                                   cur_size = ggml_quantize_q2(data_f32.data(), work.data(), nelements, ne[0], QK, hist_cur.data());
-                               } break;
+                    case GGML_TYPE_Q4_0:
+                        {
+                            cur_size = ggml_quantize_q4_0(data_f32.data(), work.data(), nelements, ne[0], QK, hist_cur.data());
+                        } break;
+                    case GGML_TYPE_Q4_1:
+                        {
+                            cur_size = ggml_quantize_q4_1(data_f32.data(), work.data(), nelements, ne[0], QK, hist_cur.data());
+                        } break;
                     default:
                         {
                             fprintf(stderr, "%s: unsupported quantization type %d\n", __func__, type);
@@ -301,7 +294,6 @@ int main(int argc, char ** argv) {
         fprintf(stderr, "usage: %s model-f32.bin model-quant.bin type\n", argv[0]);
         fprintf(stderr, "  type = 2 - q4_0\n");
         fprintf(stderr, "  type = 3 - q4_1\n");
-        fprintf(stderr, "  type = 4 - q2\n");
         return 1;
     }
 
